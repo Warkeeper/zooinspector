@@ -1,5 +1,7 @@
 package org.apache.zookeeper.inspector;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,5 +45,24 @@ public class ZooInspectorUtil
       znodePaths.add(treePathToZnodePath(treePath));
     }
     return znodePaths;
+  }
+
+  public static String beautifyNodeData(String data)
+  {
+      try {
+          return prettyJson(data);
+      } catch (Exception e) {
+          // In future, it should import more way to beautify data
+          return data;
+      }
+  }
+
+  public static String prettyJson(String json)
+  {
+      if (json == null || json.isEmpty()) {
+          return json;
+      }
+      JSONObject jsonObject = new JSONObject(json); // Convert text to object
+      return jsonObject.toString(4);
   }
 }

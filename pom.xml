@@ -16,6 +16,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20190722</version>
+    </dependency>
+    <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.15</version>
@@ -125,8 +130,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.0</version>
             <configuration>
-                <source>1.5</source>
-                <target>1.5</target>
+                <source>6</source>
+                <target>6</target>
             </configuration>
         </plugin>
     </plugins>

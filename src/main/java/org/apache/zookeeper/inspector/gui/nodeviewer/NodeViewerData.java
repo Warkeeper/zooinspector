@@ -39,6 +39,7 @@ import javax.swing.text.DefaultHighlighter.DefaultHighlightPainter;
 import javax.swing.text.DefaultStyledDocument;
 
 import org.apache.zookeeper.ZooKeeper.States;
+import org.apache.zookeeper.inspector.ZooInspectorUtil;
 import org.apache.zookeeper.inspector.gui.NodeDataViewerFindDialog;
 import org.apache.zookeeper.inspector.gui.ZooInspectorIconResources;
 import org.apache.zookeeper.inspector.logger.LoggerFactory;
@@ -249,7 +250,7 @@ public class NodeViewerData extends ZooInspectorNodeViewer {
             LoggerFactory.getLogger().error(
                 "Error retrieving data for node: " + NodeViewerData.this.selectedNode, e);
           }
-          NodeViewerData.this.dataArea.setText(data);
+          NodeViewerData.this.dataArea.setText(ZooInspectorUtil.beautifyNodeData(data));
           NodeViewerData.this.dataArea.setCaretPosition(0);
           // NodeViewerData.this.dataArea.moveCaretPosition(0);
 //          long end = System.currentTimeMillis();
