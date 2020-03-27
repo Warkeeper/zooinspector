@@ -9,6 +9,7 @@ An improved zookeeper inspector
 - Add a dropdown menu to show the last 10 successfully connected zookeeper addresses
 - Support text search in node data viewer
 - Support read-only mode for node data viewer
+- *PrettyFomat the node data if it's json.
 
 Build
 - $git clone https://github.com/zzhang5/zooinspector.git
